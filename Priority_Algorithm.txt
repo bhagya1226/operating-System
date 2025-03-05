@@ -1,0 +1,102 @@
+/*
+ * C program to implement priority scheduling
+ */
+ 
+#include <stdio.h>
+ 
+//Function to swap two variables
+void swap(int *a,int *b)
+{
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+}
+int main()
+{
+    int n;
+    printf("Enter Number of Processes: ");
+    scanf("%d",&n);
+ 
+    // b is array for burst time, p for priority and index for process id
+    int b[n],p[n],index[n];
+    for(int i=0;i<n;i++)
+    {
+        printf("Enter Burst Time and Priority Value for Process %d: ",i+1);
+        scanf("%d %d",&b[i],&p[i]);
+        index[i]=i+1;
+    }
+    for(int i=0;i<n;i++)
+    {
+        int a=p[i],m=i;
+ 
+        //Finding out highest priority element and placing it at its desired position
+        for(int j=i;j<n;j++)
+        {
+            if(p[j] > a)
+            {
+                a=p[j];
+                m=j;
+            }
+        }
+ 
+        //Swapping processes
+        swap(&p[i], &p[m]);
+        swap(&b[i], &b[m]);
+        swap(&index[i],&index[m]);
+    }
+ 
+    // T stores the starting time of process
+    int t=0;
+ 
+    //Printing scheduled process
+    printf("Order of process Execution is\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("P%d is executed from %d to %d\n",index[i],t,t+b[i]);
+        t+=b[i];
+    }
+    printf("\n");
+    printf("Process Id     Burst Time   Wait Time    TurnAround Time\n");
+    int wait_time=0;
+    for(int i=0;i<n;i++)
+    {
+        printf("P%d          %d          %d          %d\n",index[i],b[i],wait_time,wait_time + b[i]);
+        wait_time += b[i];
+    }
+    return 0;
+}
+
+//Enter Number of Processes: 7
+Enter Burst Time and Priority Value for Process 1: 3
+4
+Enter Burst Time and Priority Value for Process 2: 5
+6
+Enter Burst Time and Priority Value for Process 3: 7
+5
+Enter Burst Time and Priority Value for Process 4: 3
+2
+Enter Burst Time and Priority Value for Process 5: 2
+
+7
+Enter Burst Time and Priority Value for Process 6: 5
+6
+Enter Burst Time and Priority Value for Process 7: 8
+5
+Order of process Execution is
+P5 is executed from 0 to 2
+P2 is executed from 2 to 7
+P6 is executed from 7 to 12
+P3 is executed from 12 to 19
+P7 is executed from 19 to 27
+P1 is executed from 27 to 30
+P4 is executed from 30 to 33
+
+Process Id     Burst Time   Wait Time    TurnAround Time
+P5          2          0          2
+P2          5          2          7
+P6          5          7          12
+P3          7          12          19
+P7          8          19          27
+P1          3          27          30
+P4          3          30          33
+
