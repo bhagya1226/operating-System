@@ -43,3 +43,20 @@ class LRU {
         pageReplacement(referenceString, frameCount);
     }
 }
+// output
+LRU Page Replacement
+Frames: 7
+Frames: 7 0
+Frames: 7 0 1
+Frames: 0 1 2
+Frames: 0 1 2
+Frames: 1 2 3 
+Frames: 2 3 0
+Frames: 3 0 4
+Frames: 0 4 2
+Frames: 4 2 3
+Frames: 2 3 0
+Frames: 2 3 0
+Total Page Faults: 10
+Total Page Hits: 2
+Total Page Misses: 10
