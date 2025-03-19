@@ -38,25 +38,29 @@ class LRU {
     }
 
     public static void main(String[] args) {
-        int[] referenceString = {7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3};
+        int[] referenceString = {5,0,2,3,0,1,3,4,5,4,2,0,3,4,3};
         int frameCount = 3;
         pageReplacement(referenceString, frameCount);
     }
 }
+
 // output
 LRU Page Replacement
-Frames: 7
-Frames: 7 0
-Frames: 7 0 1
-Frames: 0 1 2
-Frames: 0 1 2
-Frames: 1 2 3 
-Frames: 2 3 0
-Frames: 3 0 4
-Frames: 0 4 2
-Frames: 4 2 3
-Frames: 2 3 0
-Frames: 2 3 0
-Total Page Faults: 10
-Total Page Hits: 2
-Total Page Misses: 10
+Frames: 5
+Frames: 5 0
+Frames: 5 0 2
+Frames: 0 2 3
+Frames: 0 2 3
+Frames: 2 3 1
+Frames: 2 3 1
+Frames: 3 1 4
+Frames: 1 4 5
+Frames: 1 4 5
+Frames: 4 5 2
+Frames: 5 2 0
+Frames: 2 0 3
+Frames: 0 3 4
+Frames: 0 3 4
+Total Page Faults: 11
+Total Page Hits: 4
+Total Page Misses: 11
