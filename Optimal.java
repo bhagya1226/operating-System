@@ -85,3 +85,20 @@ class Optimal {
         pageReplacement(referenceString, frameCount);
     }
 }
+//Output
+Optimal Page Replacement
+Frames: 7
+Frames: 7 0
+Frames: 7 0 1
+Frames: 2 0 1
+Frames: 2 0 1
+Frames: 2 0 3
+Frames: 2 0 3
+Frames: 2 4 3
+Frames: 2 4 3
+Frames: 2 4 3
+Frames: 0 4 3
+Frames: 0 4 3
+Total Page Faults: 7
+Total Page Hits: 5
+Total Page Misses: 7
