@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Arrays;
 
 class Optimal {
     public static void pageReplacement(int[] referenceString, int frameCount) {
@@ -80,25 +80,28 @@ class Optimal {
     }
 
     public static void main(String[] args) {
-        int[] referenceString = {7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3};
+        int[] referenceString = {5,0,2,3,0,1,3,4,5,4,2,0,3,4,3};
         int frameCount = 3;
         pageReplacement(referenceString, frameCount);
     }
 }
 //Output
 Optimal Page Replacement
-Frames: 7
-Frames: 7 0
-Frames: 7 0 1
-Frames: 2 0 1
-Frames: 2 0 1
-Frames: 2 0 3
-Frames: 2 0 3
-Frames: 2 4 3
-Frames: 2 4 3
+Frames: 5
+Frames: 5 0
+Frames: 5 0 2
+Frames: 5 0 3
+Frames: 5 0 3
+Frames: 5 1 3
+Frames: 5 1 3
+Frames: 5 4 3
+Frames: 5 4 3
+Frames: 5 4 3 
 Frames: 2 4 3
 Frames: 0 4 3
 Frames: 0 4 3
-Total Page Faults: 7
-Total Page Hits: 5
-Total Page Misses: 7
+Frames: 0 4 3
+Frames: 0 4 3
+Total Page Faults: 8
+Total Page Hits: 7
+Total Page Misses: 8
