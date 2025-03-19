@@ -50,3 +50,21 @@ class FIFO {
         pageReplacement(referenceString, frameCount);
     }
 }
+//Output
+
+FIFO Page Replacement
+Frames: 7
+Frames: 7 0
+Frames: 7 0 1
+Frames: 2 0 1
+Frames: 2 0 1
+Frames: 2 3 1
+Frames: 2 3 0
+Frames: 4 3 0
+Frames: 4 2 0 
+Frames: 4 2 3
+Frames: 0 2 3
+Frames: 0 2 3
+Total Page Faults: 10
+Total Page Hits: 2
+Total Page Misses: 10
